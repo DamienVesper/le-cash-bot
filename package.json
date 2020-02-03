@@ -1,0 +1,25 @@
+{
+  "name": "lecashbot",
+  "version": "2.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "JSON": "^1.0.0",
+    "axios": "^0.19.1",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "events": "^3.0.0",
+    "fs": "^0.0.2",
+    "jsonstore.io": "^1.1.0",
+    "math.js": "^1.1.45",
+    "request": "^2.88.0",
+    "express": "^4.17.1"
+  },
+  "description": "A Discord bot to gain cash in Nitro Type."
+}

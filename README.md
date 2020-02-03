@@ -1,2 +1,2 @@
-# lecashbot-v2
-LeCashBot Test Bot.
+# LeCashBot
+lol bot bad

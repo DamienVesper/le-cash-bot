@@ -1,0 +1,14 @@
+{
+    "commands": {
+        "bet": 12e4,
+        "daily": 756e5,
+        "delete": 1296e5,
+        "coinflip": 864e5,
+        "give": 3e4,
+        "guess": 18e4,
+        "report": 6e4,
+        "suggest": 6e4,
+        "withdraw": 864e5
+    },
+    "getCash": 6e4
+}
