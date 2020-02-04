@@ -7,9 +7,8 @@ let store = new jsonstore(config.jsonstoreToken);
 module.exports.run = async(client, message, args) => {
     let profileUser = args[0];
     if(!profileUser) profileUser = message.member;
-    else if(message.mentions.members) profileUser = message.mentions.members.first();
-    else if(isNaN(parseInt(profileUser))) return message.channel.send(`${message.author} That is an invalid user!`);
-    else profileUser = message.guild.members.get(args[0]);
+    else if(isNaN(parseInt(profileUser))) profileUser = message.mentions.members.first();
+    else profileUser = await message.guild.members.get(profileUser);
 
     if(!profileUser) return message.channel.send(`${message.author} That is an invalid user!`);
 

@@ -7,8 +7,8 @@ let store = new jsonstore(config.jsonstoreToken);
 module.exports.run = async(client, message, args) => {    
     let dailyAmt = 100;
     store.read(`users/${message.author.id}`).then(data => {
-        if(new Date() - new Date(data.cooldowns.commands.daily) <= (cooldowns.commands.daily * 2)) store.write(`users/${message.author.id}/dailyStreak`, data.dailyStreak += 1);
-        else store.write(`users/${message.author.id}/dailyStreak`, 0);
+        /*if(new Date() - new Date(data.cooldowns.commands.daily) <= (cooldowns.commands.daily * 2))*/ store.write(`users/${message.author.id}/dailyStreak`, data.dailyStreak += 1);
+        // else store.write(`users/${message.author.id}/dailyStreak`, 0);
 
         store.read(`users/${message.author.id}`).then(data => {
             dailyAmt += 25 * data.dailyStreak;

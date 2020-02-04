@@ -93,3 +93,16 @@ module.exports.restoreV2 = async(filePath) => {
         console.log(`Succesfully restored data from v2 file.`);
     });
 }
+
+module.exports.resetMessages = () => {
+  store.read(`users`).then(data => {
+    console.log(typeof data);
+    let newUsers = {};
+    for(let i in data) {
+      newUsers[i] = data[i];
+      newUsers[i].messageCount = 0;
+    }
+      store.write(`users`, newUsers);
+      store.write(`cooldowns/resetMessages`, new Date());
+  });
+}
