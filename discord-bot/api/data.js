@@ -10,7 +10,7 @@ module.exports.backup = async() => {
     fileName += (cD.getUTCDate() < 10 ? `0${cD.getUTCDate()}`: cD.getUTCDate()) + `_`;
     fileName += cD.getUTCMonth() < 9 ? `0${cD.getUTCMonth() + 1}`: (cD.getUTCMonth() + 1);
 
-    store.read(`users`).then(data => fs.writeFile(`./backups/${fileName}.json`, JSON.stringify(data), (err) => console.log(`Backed up data for [${fileName}].`)));
+    store.read(`users`).then(data => { console.log(data); fs.writeFile(`./backups/${fileName}.json`, JSON.stringify(data), (err) => console.log(`Backed up data for [${fileName}].`)) });
     store.write(`cooldowns/backup`, new Date());
     store.write(`logs/${new Date().getUTCMilliseconds()}`, `Backed up data.`);
 }

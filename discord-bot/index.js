@@ -203,6 +203,3 @@ client.on(`message`, message => {
 });
 
 client.login(config.token).catch(err => console.error(`Failed to login to Discord.`));
-
-dataAPI.restoreV2(`./backups/2020_31_01.json`);
-// dataAPI.resetMessages();
