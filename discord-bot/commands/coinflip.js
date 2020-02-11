@@ -20,6 +20,7 @@ module.exports.run = async(client, message, args) => {
         else if(betAmt > 5e4) return message.channel.send(`${message.author} The most you can bet is $50,000!`);
 
         let coinflip = Math.round(Math.random());
+        console.log(coinflip);
         coinflip == 0 ? coinflip = `tails`: coinflip = `heads`;
 
         store.write(`users/${message.author.id}/balance`, bet == coinflip ? data.balance += betAmt: data.balance -= betAmt);

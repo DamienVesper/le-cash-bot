@@ -11,8 +11,9 @@ const cooldowns = require(`../databases/cooldowns.json`);
 
 /* Client Configuration */
 let client = new Discord.Client({
-  disableEveryone: true
-  
+  disableEveryone: true,
+  fetchAllMembers: true,
+  sync: true
 });
 var config = {
     developer: `LeSirH`,
@@ -202,5 +203,3 @@ client.on(`message`, message => {
 });
 
 client.login(config.token).catch(err => console.error(`Failed to login to Discord.`));
-
-// dataAPI.restoreV2(`./backups/2020_23_01.json`);

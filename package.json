@@ -6,20 +6,41 @@
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "engines": {
+    "node": "10.x"
+  },
+  "keywords": [
+    "lesirh",
+    "lecashbot",
+    "nitrotype"
+  ],
+  "author": "DamienVesper",
   "license": "ISC",
   "dependencies": {
-    "JSON": "^1.0.0",
-    "axios": "^0.19.1",
+    "axios": "^0.19.2",
+    "cookie-parser": "^1.4.4",
+    "core-js": "^3.6.4",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
-    "events": "^3.0.0",
+    "events": "^3.1.0",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "ffmpeg": "0.0.4",
     "fs": "^0.0.2",
+    "http-errors": "^1.7.3",
+    "hypixel": "^1.0.3",
+    "json": "^9.0.6",
     "jsonstore.io": "^1.1.0",
-    "math.js": "^1.1.45",
+    "math.js": "^1.1.46",
+    "morgan": "^1.9.1",
+    "nitrotype": "^1.0.0",
+    "node-opus": "^0.3.2",
+    "pug": "^2.0.4",
     "request": "^2.88.0",
-    "express": "^4.17.1"
+    "sqlite3": "^4.1.1",
+    "survivio": "^1.0.5",
+    "util": "^0.12.1",
+    "ytdl-core": "^1.0.7"
   },
   "description": "A Discord bot to gain cash in Nitro Type."
 }

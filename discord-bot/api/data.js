@@ -10,7 +10,7 @@ module.exports.backup = async() => {
     fileName += (cD.getUTCDate() < 10 ? `0${cD.getUTCDate()}`: cD.getUTCDate()) + `_`;
     fileName += cD.getUTCMonth() < 9 ? `0${cD.getUTCMonth() + 1}`: (cD.getUTCMonth() + 1);
 
-    store.read(`users`).then(data => fs.writeFile(`./backups/${fileName}.json`, JSON.stringify(data), (err) => console.log(`Backed up data for [${fileName}].`)));
+    store.read(`users`).then(data => { console.log(data); fs.writeFile(`./backups/${fileName}.json`, JSON.stringify(data), (err) => console.log(`Backed up data for [${fileName}].`)) });
     store.write(`cooldowns/backup`, new Date());
     store.write(`logs/${new Date().getUTCMilliseconds()}`, `Backed up data.`);
 }
@@ -92,4 +92,17 @@ module.exports.restoreV2 = async(filePath) => {
         store.write(`logs/${new Date().getUTCMilliseconds()}`, `Restored data from v2 file.`);
         console.log(`Succesfully restored data from v2 file.`);
     });
+}
+
+module.exports.resetMessages = () => {
+  store.read(`users`).then(data => {
+    console.log(typeof data);
+    let newUsers = {};
+    for(let i in data) {
+      newUsers[i] = data[i];
+      newUsers[i].messageCount = 0;
+    }
+      store.write(`users`, newUsers);
+      store.write(`cooldowns/resetMessages`, new Date());
+  });
 }

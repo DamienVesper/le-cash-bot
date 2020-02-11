@@ -35,9 +35,10 @@ module.exports.run = async(client, message, args) => {
         for(let i = 0; i < 10; i++) {
             switch(args[0]) {
                 case `bet`: lbTxt += `${i == 0 ? `🥇`: i == 1 ? `🥈`: i == 2 ? `🥉`: `🏅`} - ${lb[i].username} - $${moneyAPI.standardize(lb[i].hBet.amount)} [${lb[i].hBet.chance}%]\n`; break;
-                case `messages`: lbTxt += `${i == 0 ? `🥇`: i == 1 ? `🥈`: i == 2 ? `🥉`: `🏅`} - ${lb[i].username} - ${lb[i].messages}\n`; break;
+                case `cash`: lbTxt += `${i == 0 ? `🥇`: i == 1 ? `🥈`: i == 2 ? `🥉`: `🏅`} - ${lb[i].username} - ${moneyAPI.standardize(lb[i].bal)}\n`; break;
                 case `daily`: lbTxt += `${i == 0 ? `🥇`: i == 1 ? `🥈`: i == 2 ? `🥉`: `🏅`} - ${lb[i].username} - ${lb[i].dailyStreak}\n`; break;
-                default: lbTxt += `${i == 0 ? `🥇`: i == 1 ? `🥈`: i == 2 ? `🥉`: `🏅`} - ${lb[i].username} - $${moneyAPI.standardize(lb[i].bal)}\n`; break;
+                case `messages`: lbTxt += `${i == 0 ? `🥇`: i == 1 ? `🥈`: i == 2 ? `🥉`: `🏅`} - ${lb[i].username} - ${lb[i].messages}\n`; break;
+                default: lbTxt = `That is an invalid leaderboard!\nValid leaderboards are bet, cash, daily, or messages.`; break;
             }
         }
 

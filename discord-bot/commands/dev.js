@@ -15,7 +15,11 @@ module.exports.run = async(client, message, args) => {
           let dEmbed = new Discord.RichEmbed()
               .setAuthor(`Users Edited`, message.author.avatarURL)
               .setColor(0x663399)
-              .setDescription(`User <@${args[1]}> was edited by ${message.author} in ${message.channel}.`)
+              .setDescription(`
+User <@${args[1]}> was edited by ${message.author} in ${message.channel}.
+Key: \`${args[2]}\`
+Value: \`${args[3]}\`
+`)
               .setTimestamp(new Date())
               .setFooter(config.footer);
 
@@ -30,7 +34,7 @@ module.exports.run = async(client, message, args) => {
               .setTimestamp(new Date())
               .setFooter(config.footer);
 
-          dataAPI.backup();
+          await dataAPI.backup();
 
           client.users.get(config.developerID).send(aEmbed);
           client.users.get(`386940319666667521`).send(aEmbed);
