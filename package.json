@@ -25,22 +25,17 @@
     "events": "^3.1.0",
     "express": "^4.17.1",
     "express-generator": "^4.16.1",
-    "ffmpeg": "0.0.4",
     "fs": "^0.0.2",
     "http-errors": "^1.7.3",
-    "hypixel": "^1.0.3",
     "json": "^9.0.6",
     "jsonstore.io": "^1.1.0",
     "math.js": "^1.1.46",
     "morgan": "^1.9.1",
     "nitrotype": "^1.0.0",
-    "node-opus": "^0.3.2",
     "pug": "^2.0.4",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "sqlite3": "^4.1.1",
-    "survivio": "^1.0.5",
-    "util": "^0.12.1",
-    "ytdl-core": "^1.0.7"
+    "util": "^0.12.1"
   },
   "description": "A Discord bot to gain cash in Nitro Type."
 }
