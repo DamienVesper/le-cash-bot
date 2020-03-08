@@ -156,7 +156,7 @@ client.on(`message`, message => {
   if(config.devMode && !config.perms.developers.includes(message.author.id)) return;
     store.read(`users/${message.author.id}`).then(data => {
         if(data && data.banned && !config.perms.developers.includes(message.author.id)) return;
-        if(message.content.slice(0, config.prefix.length) == config.prefix) {            
+        if(message.content.slice(0, config.prefix.length) == config.prefix) {
             //Command Handling
             const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
             let command = args.shift().toLowerCase();

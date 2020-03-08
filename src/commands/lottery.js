@@ -38,7 +38,7 @@ module.exports.run = async(client, message, args) => {
                     store.write(`lottery/users`, xData.users);
                     return message.channel.send(`${message.author} You paid \`$${client.api.numbers.standardize(config.lotteryAmount)}\` to join the lottery.`);
                 });
-            });            
+            });
         })
         .catch(err => message.channel.send(`${message.author} You did not respond in time!`));
     });
